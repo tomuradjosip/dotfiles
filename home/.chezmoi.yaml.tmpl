@@ -1,0 +1,25 @@
+{{- $isWorkComputer := promptBoolOnce . "isWorkComputer" "Is this your work computer" -}}
+
+{{- $email := "tomurad.josip@gmail.com" -}}
+{{- if $isWorkComputer -}}
+{{-   $email = "josip.tomurad@happening.xyz" -}}
+{{- end -}}
+
+data:
+    isWorkComputer: {{ $isWorkComputer }}
+    isHomeComputer: {{ not $isWorkComputer }}
+    email: {{ $email }}
+
+diff:
+  command: "cursor"
+  args:
+    - "--wait"
+    - "--diff"
+    - "{{ `{{ .Destination }}` }}"
+    - "{{ `{{ .Target }}` }}"
+
+merge:
+  command: "bash"
+  args:
+    - "-c"
+    - "cp {{ `{{ .Target }}` }} {{ `{{ .Target }}` }}.base && code --wait --new-window --merge {{ `{{ .Destination }}` }} {{ `{{ .Target  }}` }} {{ `{{ .Target }}` }}.base {{ `{{ .Source }}` }}"

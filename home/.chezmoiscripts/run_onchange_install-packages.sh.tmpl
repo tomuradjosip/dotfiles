@@ -1,0 +1,48 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --cleanup --file=/dev/stdin <<EOF
+{{ range .packages.universal.taps -}}
+tap {{ . | quote | replace " " "\", \"" }}
+{{ end -}}
+{{ range .packages.universal.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range .packages.universal.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ range .packages.universal.mas -}}
+mas {{ .name | quote }}, id: {{ .id }}
+{{ end -}}
+
+{{- if .isWorkComputer }}
+{{ range .packages.work.taps -}}
+tap {{ . | quote | replace " " "\", \"" }}
+{{ end -}}
+{{ range .packages.work.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range .packages.work.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ range .packages.work.mas -}}
+mas {{ .name | quote }}, id: {{ .id }}
+{{ end -}}
+{{- end }}
+
+{{- if .isHomeComputer }}
+{{ range .packages.home.taps -}}
+tap {{ . | quote | replace " " "\", \"" }}
+{{ end -}}
+{{ range .packages.home.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range .packages.home.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ range .packages.home.mas -}}
+mas {{ .name | quote }}, id: {{ .id }}
+{{ end -}}
+{{- end }}
+EOF
+{{ end -}}

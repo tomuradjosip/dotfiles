@@ -1,0 +1,38 @@
+packages:
+    universal:
+        taps:
+            - "jandedobbeleer/oh-my-posh"
+        brews:
+            - "fzf"
+            - "mas"
+            - "htop"
+            - "chezmoi"
+            - "zsh-autocomplete"
+            - "zsh-autosuggestions"
+            - "zsh-syntax-highlighting"
+            - "jandedobbeleer/oh-my-posh/oh-my-posh"
+        casks:
+            - "brave-browser"
+            - "cursor"
+            - "firefox"
+            - "font-fira-code-nerd-font"
+            - "iterm2"
+            - "raycast"
+            - "rectangle"
+            - "sublime-text"
+            - "visual-studio-code"
+            - "logi-options+"
+            - "google-chrome"
+        mas: []
+
+    work:
+        taps: []
+        brews: []
+        casks: []
+        mas: []
+
+    home:
+        taps: []
+        brews: []
+        casks: []
+        mas: []
