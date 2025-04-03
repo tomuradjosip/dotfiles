@@ -1,4 +1,8 @@
 export ZSH="$HOME/.oh-my-zsh"
+{{- if .isWorkComputer }}
+# GPG configuration
+export GPG_TTY=$(tty)
+{{- end }}
 
 plugins=(git zsh-interactive-cd zsh-navigation-tools)
 source "$ZSH/oh-my-zsh.sh"

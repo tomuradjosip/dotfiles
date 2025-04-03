@@ -12,6 +12,7 @@ packages:
             - "zsh-syntax-highlighting"
             - "jandedobbeleer/oh-my-posh/oh-my-posh"
             - "dockutil"
+            - "gnupg"
         casks:
             - "brave-browser"
             - "cursor"

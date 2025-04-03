@@ -1,3 +1,19 @@
 [user]
     name = Josip Tomurad
     email = {{ .email }}
+{{- if .isWorkComputer }}
+    signingkey = 094B4027A19B700F
+
+[commit]
+    gpgsign = true
+
+[tag]
+    gpgsign = true
+{{- end }}
+
+[pull]
+    rebase = true
+
+[rebase]
+	autosquash = true
+	autoStash = true
