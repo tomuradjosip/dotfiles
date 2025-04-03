@@ -11,6 +11,7 @@ packages:
             - "zsh-autosuggestions"
             - "zsh-syntax-highlighting"
             - "jandedobbeleer/oh-my-posh/oh-my-posh"
+            - "dockutil"
         casks:
             - "brave-browser"
             - "cursor"
