@@ -12,7 +12,7 @@ packages:
             - "zsh-syntax-highlighting"
             - "jandedobbeleer/oh-my-posh/oh-my-posh"
             - "dockutil"
-            - "gnupg"
+            - "pre-commit"
         casks:
             - "brave-browser"
             - "cursor"
@@ -30,7 +30,8 @@ packages:
 
     work:
         taps: []
-        brews: []
+        brews: 
+            - "gnupg"
         casks: []
         mas: []
 
