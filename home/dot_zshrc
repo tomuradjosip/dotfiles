@@ -10,6 +10,24 @@ alias sa="source ~/.zshrc"
 alias creds="ssh-add -D; ssh-add ~/.ssh/id_github"
 alias chezedit="cursor ~/.local/share/chezmoi"
 
+#### Git aliases
+# Push a new branch to remote
+echo "alias new='git push --set-upstream origin \$(git branch --show-current)'" >> ~/.zshrc
+# Squash all commits on the current branch into one
+echo "alias squash='git reset --soft \$(git merge-base  \$(git remote show origin | grep \"HEAD branch\" | awk \"{print \\\$3}\") HEAD)'" >> ~/.zshrc
+# Amend the last commit, force push
+echo "alias amend='pre-commit run -a; git add .; git commit --no-edit --amend; git push --force-with-lease --force-if-includes'" >> ~/.zshrc
+# Undo the last commit
+echo "alias undo='git reset HEAD~'" >> ~/.zshrc
+
+#### Git functions (because of the commit message functions are easier than aliases)
+# Add all files, commit with message
+echo 'ac() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .; git commit -m $1; }' >> ~/.zshrc
+# Add all files, commit with message, push
+echo 'acp() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .; git commit -m $1 && git push; }' >> ~/.zshrc
+# Add all files, commit with message, force push
+echo 'acpf() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .; git commit -m $1 && git push --force-with-lease --force-if-includes; }' >> ~/.zshrc
+
 # These must be the last lines
 eval "$(oh-my-posh init zsh --config $HOME/.config/terminal/terminal_theme.json)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

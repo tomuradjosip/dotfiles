@@ -24,6 +24,7 @@ packages:
             - "visual-studio-code"
             - "logi-options+"
             - "google-chrome"
+            - "docker"
         mas: []
 
     work:
