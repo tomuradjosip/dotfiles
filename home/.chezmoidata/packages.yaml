@@ -38,5 +38,7 @@ packages:
             - "orcaslicer"
             - "autodesk-fusion"
         mas:
-            - "1441195209" # Wireguard
-            - "1099568401" # Home Assistant
+            - name: "Wireguard"
+              id: 1441195209
+            - name: "Home Assistant"
+              id: 1099568401
