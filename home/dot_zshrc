@@ -11,6 +11,6 @@ alias creds="ssh-add -D; ssh-add ~/.ssh/id_github"
 alias chezedit="cursor ~/.local/share/chezmoi"
 
 # These must be the last lines
-eval "$(oh-my-posh init zsh --config $HOME/.dotfiles/terminal_theme.json)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/terminal/terminal_theme.json)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
