@@ -43,3 +43,4 @@ sudo pmset displaysleep 20
 defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
+killall Finder
