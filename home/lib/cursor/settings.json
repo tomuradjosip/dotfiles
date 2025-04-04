@@ -6,7 +6,6 @@
         ".env.production": "properties"
     },
     "git.autofetch": true,
-    "workbench.iconTheme": "icons",
     "vsicons.presets.hideExplorerArrows": true,
     "workbench.tree.indent": 24,
     "workbench.tree.renderIndentGuides": "always",
@@ -26,5 +25,6 @@
     "workbench.colorTheme": "Default Dark Modern",
     "cursor.cpp.enablePartialAccepts": true,
     "cursor.cmdk.useThemedDiffBackground": true,
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.iconTheme": "vscode-icons"
 }

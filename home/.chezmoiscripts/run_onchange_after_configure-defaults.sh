@@ -33,11 +33,11 @@ declare -a remove_labels=(
 )
 
 for label in "${remove_labels[@]}"; do
-	dockutil --no-restart --remove "${label}" || true
+	dockutil --no-restart --remove "${label}" 2>/dev/null || true
 done
 
 # Configure sleep
-sudo pmset displaysleep 20
+sudo pmset displaysleep 25
 
 # Configure Finder
 defaults write com.apple.finder ShowStatusBar -bool true
