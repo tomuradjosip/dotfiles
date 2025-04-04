@@ -37,7 +37,9 @@ for label in "${remove_labels[@]}"; do
 done
 
 # Configure sleep
-sudo pmset displaysleep 60
+sudo pmset displaysleep 20
 
-# Disable Spotlight shortcut
-defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 64 "{ enabled = 0; value = { parameters = (32, 49, 1048576); type = standard; }; }"
+# Configure Finder
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
