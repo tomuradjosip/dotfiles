@@ -1,0 +1,31 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.fontFamily": "Firacode Nerd Font",
+    "files.associations": {
+        "*.tpl": "shellscript",
+        ".env.production": "properties"
+    },
+    "git.autofetch": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "welcomePage",
+    "github.copilot.advanced": {},
+    "vsicons.presets.hideExplorerArrows": true,
+    "workbench.tree.indent": 24,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.view.alwaysShowHeaderActions": true,
+    "workbench.activityBar.location": "top",
+    "window.zoomLevel": 1,
+    "git.confirmSync": false,
+    "editor.inlineSuggest.showToolbar": "always",
+    "terminal.integrated.defaultLocation": "view",
+    "terminal.integrated.scrollback": 100000,
+    "editor.minimap.enabled": false,
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.colorTheme": "Default Dark Modern",
+}

@@ -1,0 +1,30 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.fontFamily": "Firacode Nerd Font",
+    "files.associations": {
+        "*.tpl": "shellscript",
+        ".env.production": "properties"
+    },
+    "git.autofetch": true,
+    "workbench.iconTheme": "icons",
+    "vsicons.presets.hideExplorerArrows": true,
+    "workbench.tree.indent": 24,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.view.alwaysShowHeaderActions": true,
+    "window.zoomLevel": 1,
+    "git.confirmSync": false,
+    "editor.inlineSuggest.showToolbar": "always",
+    "terminal.integrated.defaultLocation": "view",
+    "terminal.integrated.scrollback": 100000,
+    "editor.minimap.enabled": false,
+    "workbench.editor.empty.hint": "hidden",
+    "cursor.cpp.disabledLanguages": [
+        "plaintext",
+        "markdown",
+        "scminput"
+    ],
+    "workbench.colorTheme": "Default Dark Modern",
+    "cursor.cpp.enablePartialAccepts": true,
+    "cursor.cmdk.useThemedDiffBackground": true,
+    "diffEditor.ignoreTrimWhitespace": false
+}

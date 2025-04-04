@@ -1,0 +1,15 @@
+[
+    {
+        "key": "shift+cmd+c",
+        "command": "workbench.action.terminal.new"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "workbench.action.toggleMaximizedPanel"
+    }
+]
