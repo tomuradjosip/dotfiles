@@ -26,11 +26,12 @@ packages:
             - "logi-options+"
             - "google-chrome"
             - "docker"
+            - "topnotch"
         mas: []
 
     work:
         taps: []
-        brews: 
+        brews:
             - "gnupg"
         casks: []
         mas: []
