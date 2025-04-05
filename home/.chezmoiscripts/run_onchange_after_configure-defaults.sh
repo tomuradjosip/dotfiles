@@ -36,6 +36,15 @@ for label in "${remove_labels[@]}"; do
 	dockutil --no-restart --remove "${label}" 2>/dev/null || true
 done
 
+# Configure hot corners
+defaults write com.apple.dock wvous-tr-corner -int 12
+defaults write com.apple.dock wvous-br-corner -int 2
+defaults write com.apple.dock wvous-bl-corner -int 5
+defaults write com.apple.dock wvous-tl-corner -int 4
+
+# Hide menubar
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
 # Configure sleep
 sudo pmset displaysleep 25
 
