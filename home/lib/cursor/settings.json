@@ -26,5 +26,6 @@
     "cursor.cpp.enablePartialAccepts": true,
     "cursor.cmdk.useThemedDiffBackground": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true
 }
