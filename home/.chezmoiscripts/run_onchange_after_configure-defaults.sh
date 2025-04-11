@@ -40,7 +40,7 @@ done
 defaults write com.apple.dock wvous-tr-corner -int 12
 defaults write com.apple.dock wvous-br-corner -int 2
 defaults write com.apple.dock wvous-bl-corner -int 5
-defaults write com.apple.dock wvous-tl-corner -int 4
+defaults write com.apple.dock wvous-tl-corner -int 0
 
 # Configure sleep
 display_sleep_current=$(pmset -g | grep displaysleep | awk '{print $2}')
