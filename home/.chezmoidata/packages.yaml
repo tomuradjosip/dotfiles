@@ -13,7 +13,6 @@ packages:
             - "jandedobbeleer/oh-my-posh/oh-my-posh"
             - "dockutil"
             - "pre-commit"
-            - "warrensbox/tap/tfswitch"
         casks:
             - "brave-browser"
             - "cursor"
@@ -33,11 +32,14 @@ packages:
     work:
         taps:
             - "superbet-group/tap"
+            - "warrensbox/tap"
         brews:
             - "gnupg"
             - "kubernetes-cli"
             - "node"
             - "yarn"
+            - "warrensbox/tap/tfswitch"
+            - "awscli"
         casks:
             - "teleport-cli"
         mas: []
