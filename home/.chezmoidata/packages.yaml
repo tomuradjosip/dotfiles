@@ -2,7 +2,7 @@ packages:
     universal:
         taps:
             - "jandedobbeleer/oh-my-posh"
-            - "hashicorp/tap"
+            - "warrensbox/tap"
         brews:
             - "fzf"
             - "mas"
@@ -13,7 +13,7 @@ packages:
             - "jandedobbeleer/oh-my-posh/oh-my-posh"
             - "dockutil"
             - "pre-commit"
-            - "hashicorp/tap/terraform"
+            - "warrensbox/tap/tfswitch"
         casks:
             - "brave-browser"
             - "cursor"
