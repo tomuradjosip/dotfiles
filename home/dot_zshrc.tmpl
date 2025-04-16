@@ -24,6 +24,8 @@ alias squash="git reset --soft \$(git merge-base  \$(git remote show origin | gr
 alias amend="pre-commit run -a; git add .; git commit --no-edit --amend; git push --force-with-lease --force-if-includes"
 # Undo the last commit
 alias undo="git reset HEAD~"
+# Cleanup branches that are already merged or gone on remote
+alias cleanup="git checkout \$(git remote show origin | grep \"HEAD branch\" | awk \"{print \\\$3}\") && git pull && git fetch --prune && git branch -vv | awk \"/: gone]/{print \\\$1}\" | xargs -r -n 1 git branch -D"
 
 #### Git functions (because of the commit message functions are easier than aliases)
 # Add all files, commit with message
