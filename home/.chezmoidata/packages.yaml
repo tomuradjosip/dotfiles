@@ -40,8 +40,10 @@ packages:
             - "yarn"
             - "warrensbox/tap/tfswitch"
             - "awscli"
+            - "helm"
         casks:
             - "teleport-cli"
+            - "aws-vault"
         mas: []
 
     home:
