@@ -37,7 +37,7 @@ for label in "${remove_labels[@]}"; do
 done
 
 # Configure hot corners
-defaults write com.apple.dock wvous-tr-corner -int 12
+defaults write com.apple.dock wvous-tr-corner -int 0
 defaults write com.apple.dock wvous-br-corner -int 2
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-tl-corner -int 0
