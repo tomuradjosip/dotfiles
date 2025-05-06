@@ -54,6 +54,7 @@ packages:
             - "orcaslicer"
             - "autodesk-fusion"
             - "discord"
+            - "whatsapp"
         mas:
             - name: "Wireguard"
               id: 1441195209
