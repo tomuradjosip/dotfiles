@@ -42,6 +42,9 @@ packages:
             - "warrensbox/tap/tfswitch"
             - "awscli"
             - "helm"
+            - "terraform-docs"
+            - "tflint"
+            - "trivy"
         casks:
             - "teleport-cli"
             - "aws-vault"
