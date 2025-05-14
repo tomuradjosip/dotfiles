@@ -45,6 +45,7 @@ packages:
             - "terraform-docs"
             - "tflint"
             - "trivy"
+            - "k9s"
         casks:
             - "teleport-cli"
             - "aws-vault"
