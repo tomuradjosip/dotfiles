@@ -46,6 +46,7 @@ packages:
             - "tflint"
             - "trivy"
             - "k9s"
+            - "crossplane"
         casks:
             - "teleport-cli"
             - "aws-vault"
