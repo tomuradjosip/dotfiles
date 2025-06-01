@@ -24,5 +24,15 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true,
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "projectManager.git.baseFolders": [
+    "/Users/josiptomurad/git"
+  ],
+  "projectManager.tags": [
+    "Content",
+    "Gaming",
+    "Ops",
+    "Betler",
+    "WGP"
+  ]
 }

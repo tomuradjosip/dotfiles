@@ -13,6 +13,7 @@ packages:
             - "jandedobbeleer/oh-my-posh/oh-my-posh"
             - "dockutil"
             - "pre-commit"
+            - "vim"
         casks:
             - "brave-browser"
             - "cursor"
