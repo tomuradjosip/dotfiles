@@ -28,6 +28,7 @@ packages:
             - "google-chrome"
             - "docker"
             - "topnotch"
+            - "meld"
         mas: []
 
     work:
