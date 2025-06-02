@@ -50,6 +50,7 @@ packages:
             - "k9s"
             - "crossplane"
             - "hatch"
+            - "kops"
         casks:
             - "teleport-cli"
             - "aws-vault"
