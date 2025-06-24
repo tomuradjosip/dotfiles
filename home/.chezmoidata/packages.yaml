@@ -64,6 +64,9 @@ packages:
             - "autodesk-fusion"
             - "discord"
             - "whatsapp"
+            - "qbittorrent"
+            - "vlc"
+            - "winbox"
         mas:
             - name: "Wireguard"
               id: 1441195209
