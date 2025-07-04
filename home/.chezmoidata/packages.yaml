@@ -67,6 +67,7 @@ packages:
             - "qbittorrent"
             - "vlc"
             - "winbox"
+            - "raspberry-pi-imager"
         mas:
             - name: "Wireguard"
               id: 1441195209
