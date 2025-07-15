@@ -73,3 +73,5 @@ packages:
               id: 1441195209
             - name: "Home Assistant"
               id: 1099568401
+            - name: "Bitwarden"
+              id: 1137397744
