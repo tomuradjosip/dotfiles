@@ -68,6 +68,7 @@ packages:
             - "vlc"
             - "winbox"
             - "raspberry-pi-imager"
+            - "signal"
         mas:
             - name: "Wireguard"
               id: 1451685025
