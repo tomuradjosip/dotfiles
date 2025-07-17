@@ -69,6 +69,7 @@ packages:
             - "winbox"
             - "raspberry-pi-imager"
             - "signal"
+            - "proton-mail"
         mas:
             - name: "Wireguard"
               id: 1451685025
