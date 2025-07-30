@@ -70,6 +70,7 @@ packages:
             - "winbox"
             - "raspberry-pi-imager"
             - "signal"
+            - "balenaetcher"
         mas:
             - name: "Wireguard"
               id: 1451685025
