@@ -1,3 +1,13 @@
-Host *
+  Host server
+    HostName server
+    User toka
+    IdentityFile ~/.ssh/id_homelab
+
+  Host octoprint
+    HostName octoprint
+    User toka
+    IdentityFile ~/.ssh/id_homelab
+
+  Host *
     AddKeysToAgent yes
-	IdentityFile ~/.ssh/id_github
+    IdentityFile ~/.ssh/id_github
