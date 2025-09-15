@@ -17,7 +17,10 @@
   "terminal.integrated.scrollback": 100000,
   "editor.minimap.enabled": false,
   "workbench.editor.empty.hint": "hidden",
-  "cursor.cpp.disabledLanguages": ["plaintext", "markdown", "scminput"],
+  "cursor.cpp.disabledLanguages": [
+    "plaintext",
+    "scminput"
+  ],
   "workbench.colorTheme": "Default Dark Modern",
   "cursor.cpp.enablePartialAccepts": true,
   "cursor.cmdk.useThemedDiffBackground": true,
@@ -34,5 +37,6 @@
     "Ops",
     "Betler",
     "WGP"
-  ]
+  ],
+  "cursor.composer.shouldChimeAfterChatFinishes": true
 }
