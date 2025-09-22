@@ -58,8 +58,7 @@ packages:
         mas: []
 
     home:
-        taps:
-            - "grishka/grishka"
+        taps: []
         brews: []
         casks:
             - "orcaslicer"
@@ -72,7 +71,6 @@ packages:
             - "raspberry-pi-imager"
             - "signal"
             - "balenaetcher"
-            - "grishka/grishka/neardrop"
         mas:
             - name: "Wireguard"
               id: 1451685025
