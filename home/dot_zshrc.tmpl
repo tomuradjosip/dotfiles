@@ -14,6 +14,7 @@ alias ea="vi ~/.zshrc"
 alias sa="source ~/.zshrc"
 alias creds="ssh-add -D; ssh-add ~/.ssh/id_github"
 alias ce="cursor ~/.local/share/chezmoi"
+alias pre="pre-commit run -a"
 
 #### Git aliases
 # Push a new branch to remote
@@ -34,6 +35,21 @@ ac() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .;
 acp() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .; git commit -m $1 && git push; }
 # Add all files, commit with message, force push
 acpf() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .; git commit -m $1 && git push --force-with-lease --force-if-includes; }
+# Add all files, commit with message, push a new branch
+acpn() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .; git commit -m $1 && git push --set-upstream origin $(git branch --show-current); }
+
+#### Terraform aliases
+alias tfi="terraform init"
+alias tfir="terraform init -reconfigure"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+alias tfaa="terraform apply --auto-approve"
+alias tfd="terraform destroy"
+alias tfo="terraform output"
+alias tfs="terraform show"
+alias tfss="terraform state show"
+alias tfsl="terraform state list"
+alias tfg="terraform graph"
 
 # These must be the last lines
 eval "$(oh-my-posh init zsh --config $HOME/.config/terminal/terminal_theme.json)"
