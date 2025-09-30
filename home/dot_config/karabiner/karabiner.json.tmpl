@@ -1,0 +1,46 @@
+{{- /* Karabiner-Elements Configuration Template */ -}}
+{{- /* This file configures keyboard modifications to prevent accidental system activations */ -}}
+{
+    "global": {
+        {{- /* Hide Karabiner icon from menu bar for cleaner UI */ -}}
+        "show_in_menu_bar": false
+    },
+    "profiles": [
+        {
+            "fn_function_keys": [
+                {
+                    {{- /* Remap F4 from Spotlight to Raycast */ -}}
+                    "from": { "key_code": "f4" },
+                    "to": [
+                        {
+                            "shell_command": "open -a 'Raycast'"
+                        }
+                    ]
+                },
+                {
+                    {{- /* Keep F5 as regular F5 key (disable dictation activation) */ -}}
+                    "from": { "key_code": "f5" },
+                    "to": [{ "key_code": "f5" }]
+                }
+            ],
+            "name": "Default profile",
+            "selected": true,
+            "simple_modifications": [
+                {
+                    {{- /* Disable Fn+D to prevent accidental dictation activation */ -}}
+                    "from": {
+                        "key_code": "d",
+                        "modifiers": { "mandatory": ["fn"] }
+                    },
+                    "to": [{ "key_code": "vk_none" }]
+                },
+                {
+                    {{- /* Disable F8 (Play/Pause) to prevent accidental Apple Music activation */ -}}
+                    "from": { "key_code": "f8" },
+                    "to": [{ "key_code": "vk_none" }]
+                }
+            ],
+            "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
+        }
+    ]
+}

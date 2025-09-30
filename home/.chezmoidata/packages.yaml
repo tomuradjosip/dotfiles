@@ -26,10 +26,10 @@ packages:
             - "visual-studio-code"
             - "logi-options+"
             - "google-chrome"
-            - "docker"
             - "topnotch"
             - "meld"
             - "rar"
+            - "karabiner-elements"
         mas: []
 
     work:
