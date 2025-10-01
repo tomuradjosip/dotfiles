@@ -4,6 +4,8 @@ export PATH="$PATH:/Users/josiptomurad/bin"
 {{- if .isWorkComputer }}
 # GPG configuration
 export GPG_TTY=$(tty)
+# GitHub token (in ~/.config/git/token)
+export GITHUB_TOKEN=$(cat ~/.config/git/token)
 {{- end }}
 
 plugins=(git zsh-interactive-cd zsh-navigation-tools)
