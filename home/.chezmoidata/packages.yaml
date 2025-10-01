@@ -21,7 +21,6 @@ packages:
             - "font-fira-code-nerd-font"
             - "iterm2"
             - "raycast"
-            - "rectangle"
             - "sublime-text"
             - "visual-studio-code"
             - "logi-options+"
