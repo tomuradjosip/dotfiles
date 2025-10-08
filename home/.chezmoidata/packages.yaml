@@ -51,6 +51,7 @@ packages:
             - "crossplane"
             - "hatch"
             - "kops"
+            - "argocd"
         casks:
             - "teleport-cli"
             - "aws-vault"
