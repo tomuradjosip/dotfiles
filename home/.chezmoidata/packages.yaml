@@ -29,6 +29,7 @@ packages:
             - "meld"
             - "rar"
             - "karabiner-elements"
+            - "rectangle"
         mas: []
 
     work:

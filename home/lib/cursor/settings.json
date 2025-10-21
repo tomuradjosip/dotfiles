@@ -17,10 +17,7 @@
   "terminal.integrated.scrollback": 100000,
   "editor.minimap.enabled": false,
   "workbench.editor.empty.hint": "hidden",
-  "cursor.cpp.disabledLanguages": [
-    "plaintext",
-    "scminput"
-  ],
+  "cursor.cpp.disabledLanguages": ["plaintext", "scminput"],
   "workbench.colorTheme": "Default Dark Modern",
   "cursor.cpp.enablePartialAccepts": true,
   "cursor.cmdk.useThemedDiffBackground": true,
@@ -28,17 +25,11 @@
   "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDelete": false,
-  "projectManager.git.baseFolders": [
-    "/Users/josiptomurad/git"
-  ],
-  "projectManager.tags": [
-    "Content",
-    "Gaming",
-    "Ops",
-    "Betler",
-    "WGP"
-  ],
+  "projectManager.git.baseFolders": ["/Users/josiptomurad/git"],
+  "projectManager.tags": ["Content", "Gaming", "Ops", "Betler", "WGP"],
   "cursor.composer.shouldChimeAfterChatFinishes": true,
   "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.codeLens.authors.enabled": false
+  "gitlens.codeLens.authors.enabled": false,
+  "workbench.panel.showLabels": false,
+  "editor.accessibilitySupport": "off"
 }
