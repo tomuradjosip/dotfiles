@@ -30,6 +30,7 @@ packages:
             - "rar"
             - "karabiner-elements"
             - "rectangle"
+            - "alt-tab"
         mas: []
 
     work:
