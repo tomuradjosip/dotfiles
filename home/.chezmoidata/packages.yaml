@@ -57,6 +57,7 @@ packages:
         casks:
             - "teleport-cli"
             - "aws-vault"
+            - "obs"
         mas: []
 
     home:
