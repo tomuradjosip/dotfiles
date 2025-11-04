@@ -58,7 +58,9 @@ packages:
             - "teleport-cli"
             - "aws-vault"
             - "obs"
-        mas: []
+        mas:
+            - name: "Zone Share:Screen Sharing Tool"
+              id: 6743621581
 
     home:
         taps: []
