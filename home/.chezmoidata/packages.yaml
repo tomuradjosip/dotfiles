@@ -55,6 +55,7 @@ packages:
             - "hatch"
             - "kops"
             - "argocd"
+            - "velero"
         casks:
             - "teleport-cli"
             - "aws-vault"
