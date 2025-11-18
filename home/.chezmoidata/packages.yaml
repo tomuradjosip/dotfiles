@@ -20,7 +20,6 @@ packages:
             - "firefox"
             - "font-fira-code-nerd-font"
             - "font-intone-mono-nerd-font"
-            - "iterm2"
             - "raycast"
             - "sublime-text"
             - "visual-studio-code"
