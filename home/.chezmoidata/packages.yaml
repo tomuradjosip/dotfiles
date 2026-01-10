@@ -76,6 +76,7 @@ packages:
             - "raspberry-pi-imager"
             - "signal"
             - "balenaetcher"
+            - "anydesk"
         mas:
             - name: "Wireguard"
               id: 1451685025
