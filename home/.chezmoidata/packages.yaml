@@ -3,6 +3,7 @@ packages:
         taps:
             - "jandedobbeleer/oh-my-posh"
             - "warrensbox/tap"
+            - "buo/cask-upgrade"
         brews:
             - "fzf"
             - "mas"
@@ -36,7 +37,6 @@ packages:
     work:
         taps:
             - "superbet-group/tap"
-            - "warrensbox/tap"
         brews:
             - "gnupg"
             - "kubernetes-cli"
@@ -57,7 +57,7 @@ packages:
             - "velero"
         casks:
             - "teleport-cli"
-            - "aws-vault"
+            - "aws-vault-binary"
         mas:
             - name: "Zone Share:Screen Sharing Tool"
               id: 6743621581
