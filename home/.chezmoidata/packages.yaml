@@ -77,6 +77,7 @@ packages:
             - "signal"
             - "balenaetcher"
             - "anydesk"
+            - "libreoffice"
         mas:
             - name: "Wireguard"
               id: 1451685025
