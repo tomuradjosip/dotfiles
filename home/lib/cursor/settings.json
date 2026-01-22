@@ -34,5 +34,11 @@
   "files.autoSave": "afterDelay",
   "editor.fontFamily": "IntoneMono Nerd Font",
   "editor.fontSize": 13,
-  "terminal.integrated.fontSize": 13
+  "terminal.integrated.fontSize": 13,
+  "peacock.affectPanelBorder": true,
+  "peacock.affectSideBarBorder": true,
+  "peacock.affectTabActiveBorder": true,
+  "vs-kubernetes": {
+    "vs-kubernetes.crd-code-completion": "disabled"
+  }
 }
