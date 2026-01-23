@@ -13,7 +13,7 @@ source "$ZSH/oh-my-zsh.sh"
 
 # Aliases
 alias ea="vi ~/.zshrc"
-alias sa="source ~/.zshrc"
+alias sa="exec zsh"
 alias creds="ssh-add -D; ssh-add ~/.ssh/id_github"
 alias ce="cursor ~/.local/share/chezmoi"
 alias pre="pre-commit run -a"
@@ -30,16 +30,6 @@ alias undo="git reset HEAD~"
 # Cleanup branches that are already merged or gone on remote
 alias cleanup="git checkout \$(git remote show origin | grep \"HEAD branch\" | awk \"{print \\\$3}\") && git pull && git fetch --prune && git branch -vv | awk \"/: gone]/{print \\\$1}\" | xargs -r -n 1 git branch -D"
 
-#### Git functions (because of the commit message functions are easier than aliases)
-# Add all files, commit with message
-ac() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .; git commit -m $1; }
-# Add all files, commit with message, push
-acp() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .; git commit -m $1 && git push; }
-# Add all files, commit with message, force push
-acpf() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .; git commit -m $1 && git push --force-with-lease --force-if-includes; }
-# Add all files, commit with message, push a new branch
-acpn() { if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi; git add .; git commit -m $1 && git push --set-upstream origin $(git branch --show-current); }
-
 #### Terraform aliases
 alias tfi="terraform init"
 alias tfir="terraform init -reconfigure"
@@ -53,6 +43,11 @@ alias tfs="terraform show"
 alias tfss="terraform state show"
 alias tfsl="terraform state list"
 alias tfg="terraform graph"
+
+# Source all zsh functions
+for f in ~/.config/zsh\ functions/*.zsh; do
+  [[ -f "$f" ]] && source "$f"
+done
 
 # These must be the last lines
 eval "$(oh-my-posh init zsh --config $HOME/.config/terminal/terminal_theme.json)"
