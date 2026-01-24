@@ -109,54 +109,10 @@
         "alignment": "left",
         "segments": [
           {
-            "properties": {
-              "cache_duration": "none",
-              "script": "$WORKDIR/.devcontainer/scripts/get-aws-profile.sh"
-            },
-            "template": "\udb80\udd63 ",
-            "foreground": "p:os",
-            "type": "command",
-            "style": "plain"
-          },
-          {
-            "properties": {
-              "cache_duration": "none",
-              "script": "$WORKDIR/.devcontainer/scripts/get-aws-profile.sh"
-            },
-            "template": "aws ",
-            "foreground": "p:blue",
-            "type": "command",
-            "style": "plain"
-          },
-          {
-            "properties": {
-              "cache_duration": "none",
-              "script": "$WORKDIR/.devcontainer/scripts/get-aws-region.sh"
-            },
-            "template": "\udb80\udde7 ",
-            "foreground": "p:lavender",
-            "type": "command",
-            "style": "plain"
-          },
-          {
-            "properties": {
-              "cache_duration": "none",
-              "script": "$WORKDIR/.devcontainer/scripts/get-aws-region.sh"
-            },
-            "template": "{{ .Output }} ",
-            "foreground": "p:pink",
-            "type": "command",
-            "style": "plain"
-          },
-          {
-            "properties": {
-              "cache_duration": "none",
-              "script": "$WORKDIR/.devcontainer/scripts/get-aws-type.sh"
-            },
-            "template": "\uea75 {{ .Output }} ",
-            "foreground": "p:lavender",
-            "type": "command",
-            "style": "plain"
+            "type": "aws",
+            "style": "plain",
+            "foreground": "p:peach",
+            "template": "  {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
           }
         ],
         "newline": true
@@ -167,24 +123,15 @@
         "overflow": "hide",
         "segments": [
           {
-            "properties": {
-              "cache_duration": "none",
-              "script": "$WORKDIR/.devcontainer/scripts/get-aws-profile.sh"
-            },
-            "template": "\udb81\uddb5 {{ .Output }} </>",
+            "type": "kubectl",
+            "style": "plain",
             "foreground": "p:sky",
-            "type": "command",
-            "style": "plain"
-          },
-          {
-            "properties": {
-              "cache_duration": "none",
-              "script": "$WORKDIR/.devcontainer/scripts/get-aws-timeout.sh"
-            },
-            "template": "\udb80\udd09 {{ .Output }}",
-            "foreground": "p:peach",
-            "type": "command",
-            "style": "plain"
+            "template": " 󱃾 {{.Context}} ",
+            "options": {
+              "context_aliases": {
+                "staging.stats.superbet.k8s.local": "content-stage"
+              }
+            }
           }
         ]
       },
@@ -226,4 +173,3 @@
     "version": 3,
     "final_space": true
   }
-  
