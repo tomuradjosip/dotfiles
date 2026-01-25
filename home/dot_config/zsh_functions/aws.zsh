@@ -1,12 +1,34 @@
 #### AWS functions
-# Default SSO profile - change this to your SSO profile name
+# Default SSO profile for assuming roles
 AWS_SSO_PROFILE="default"
 
-# Environment to role ARN mapping
-typeset -A AWS_ROLE_ARNS
+# Environment configuration
+# Each environment has: kops_profile, kops_state_store, kops_cluster_name, role_arn, region
+typeset -A AWS_KOPS_PROFILE AWS_KOPS_STATE_STORE AWS_KOPS_CLUSTER_NAME AWS_ROLE_ARNS AWS_ENV_REGION
+
+AWS_KOPS_PROFILE=(
+  [stage]="ContentStaging"
+  [prod]="ContentProduction"
+)
+
+AWS_KOPS_STATE_STORE=(
+  [stage]="s3://scorealarm-staging-cluster-state"
+  [prod]="s3://scorealarm-stats-production-cluster-state"
+)
+
+AWS_KOPS_CLUSTER_NAME=(
+  [stage]="staging.stats.superbet.k8s.local"
+  [prod]="production.stats.superbet.k8s.local"
+)
+
 AWS_ROLE_ARNS=(
   [stage]="arn:aws:iam::617709483204:role/sre-admin"
   [prod]="arn:aws:iam::486705210074:role/sre-admin"
+)
+
+AWS_ENV_REGION=(
+  [stage]="eu-west-1"
+  [prod]="eu-west-1"
 )
 
 
@@ -94,11 +116,15 @@ aws_login() {
 # Clear all AWS credentials and SSO cache
 # Usage: aws_logout
 aws_logout() {
-  unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_PROFILE AWS_DEFAULT_REGION AWS_CREDENTIAL_EXPIRATION AWS_SSO_EXPIRATION AWS_ASSUMED_ROLE_ARN
+  unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_PROFILE AWS_DEFAULT_REGION
+  unset AWS_CREDENTIAL_EXPIRATION AWS_SSO_EXPIRATION AWS_ASSUMED_ROLE_ARN
+  unset KOPS_STATE_STORE KOPS_CLUSTER_NAME
+  unset TF_VAR_environment TF_VAR_region
+  unset SIGSCI_EMAIL SIGSCI_CORP SIGSCI_TOKEN FASTLY_API_KEY FASTLY_KEY
   setopt localoptions rmstarsilent
   rm -rf ~/.aws/sso/cache/* 2>/dev/null
   rm -rf ~/.aws/cli/cache/* 2>/dev/null
-  echo "AWS credentials cleared"
+  echo "AWS credentials and environment cleared"
 }
 
 
@@ -168,6 +194,119 @@ aws_assume() {
 }
 
 
+# Get secret from macOS Keychain
+_aws_get_secret() {
+  local key=$1
+  local value
+  value=$(security find-generic-password -a "$USER" -s "$key" -w 2>/dev/null)
+  if [[ -z "$value" ]]; then
+    echo "Warning: Secret '$key' not found in Keychain" >&2
+    echo "  Add it with: security add-generic-password -a \"\$USER\" -s \"$key\" -w \"your-secret-here\"" >&2
+    return 1
+  fi
+  echo "$value"
+}
+
+
+# Export terraform environment variables
+_aws_export_terraform_vars() {
+  local env=$1
+  local region=${AWS_ENV_REGION[$env]}
+
+  # Static variables
+  export TF_VAR_environment="$env"
+  export TF_VAR_region="$region"
+  export SIGSCI_EMAIL="josip.tomurad@happening.xyz"
+  export SIGSCI_CORP="superbet"
+
+  # Secrets from Keychain
+  export SIGSCI_TOKEN=$(_aws_get_secret "SIGSCI_TOKEN")
+  export FASTLY_API_KEY=$(_aws_get_secret "FASTLY_API_KEY")
+  export FASTLY_KEY=$(_aws_get_secret "FASTLY_KEY")
+}
+
+
+# Full environment setup: kops + sre-admin role + terraform vars
+# Usage: aws_env <stage|prod>
+aws_env() {
+  local env=$1
+
+  if [[ -z "$env" ]]; then
+    echo "Usage: aws_env <stage|prod>"
+    echo "Available environments: ${(k)AWS_ROLE_ARNS}"
+    return 1
+  fi
+
+  local kops_profile=${AWS_KOPS_PROFILE[$env]}
+  if [[ -z "$kops_profile" ]]; then
+    echo "Unknown environment: $env"
+    echo "Available environments: ${(k)AWS_ROLE_ARNS}"
+    return 1
+  fi
+
+  local kops_state_store=${AWS_KOPS_STATE_STORE[$env]}
+  local kops_cluster_name=${AWS_KOPS_CLUSTER_NAME[$env]}
+  local region=${AWS_ENV_REGION[$env]}
+
+  echo "=== Setting up $env environment ==="
+  echo ""
+
+  # Step 1: Login with kops profile and export kubeconfig
+  echo ">>> Step 1: Kops setup (profile: $kops_profile)"
+  export AWS_PROFILE="$kops_profile"
+  export KOPS_STATE_STORE="$kops_state_store"
+  export KOPS_CLUSTER_NAME="$kops_cluster_name"
+
+  if ! aws sts get-caller-identity &>/dev/null; then
+    echo "Logging in to AWS SSO (profile: $kops_profile)..."
+    aws sso login --profile "$kops_profile"
+    if ! aws sts get-caller-identity --profile "$kops_profile" &>/dev/null; then
+      echo "Kops SSO login failed"
+      return 1
+    fi
+  else
+    echo "Already logged in to $kops_profile"
+  fi
+
+  echo "Exporting kubeconfig..."
+  if ! kops export kubeconfig --admin=24h; then
+    echo "Kops export failed"
+    return 1
+  fi
+  echo "Kops setup complete"
+  echo ""
+
+  # Step 2: Login with default profile and assume sre-admin role
+  echo ">>> Step 2: Assume sre-admin role"
+  unset AWS_PROFILE AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+  aws_assume "$env"
+  if [[ $? -ne 0 ]]; then
+    return 1
+  fi
+  echo ""
+
+  # Step 3: Export terraform variables
+  echo ">>> Step 3: Export terraform variables"
+  _aws_export_terraform_vars "$env"
+  echo "TF_VAR_environment=$TF_VAR_environment"
+  echo "TF_VAR_region=$TF_VAR_region"
+  echo "SIGSCI_EMAIL=$SIGSCI_EMAIL"
+  echo "SIGSCI_CORP=$SIGSCI_CORP"
+  echo "SIGSCI_TOKEN=${SIGSCI_TOKEN:+[set]}"
+  echo "FASTLY_API_KEY=${FASTLY_API_KEY:+[set]}"
+  echo "FASTLY_KEY=${FASTLY_KEY:+[set]}"
+  echo ""
+
+  # Re-export kops variables (they were cleared during assume)
+  export KOPS_STATE_STORE="$kops_state_store"
+  export KOPS_CLUSTER_NAME="$kops_cluster_name"
+
+  echo "=== $env environment ready ==="
+}
+
+
 # Convenience aliases
 alias aws_assume_content_stage="aws_assume stage"
 alias aws_assume_content_prod="aws_assume prod"
+alias cstage="aws_env stage"
+alias cprod="aws_env prod"

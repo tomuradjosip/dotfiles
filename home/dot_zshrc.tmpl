@@ -72,10 +72,11 @@ alias tfss="terraform state show"
 alias tfsl="terraform state list"
 alias tfg="terraform graph"
 
-# Source all zsh functions
-for f in ~/.config/zsh_functions/*; do
-  [[ -f "$f" ]] && source "$f"
-done
+# Source zsh functions
+source ~/.config/zsh_functions/git.zsh
+{{ if .isWorkComputer }}
+  source ~/.config/zsh_functions/aws.zsh
+{{ end }}
 
 # These must be the last lines
 eval "$(oh-my-posh init zsh --config $HOME/.config/terminal/terminal_theme.json)"
