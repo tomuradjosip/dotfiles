@@ -13,69 +13,12 @@ export GITHUB_TOKEN=$(cat ~/.config/git/token)
 [[ -f "$HOME/.local/share/zsh/plugins/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh" ]] && \
   source "$HOME/.local/share/zsh/plugins/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh"
 
-# Aliases
-alias ea="vi ~/.zshrc"
-alias sa="exec zsh"
-alias creds="ssh-add -D; ssh-add ~/.ssh/id_github"
-alias ce="cursor ~/.local/share/chezmoi"
-alias ca="chezmoi apply && exec zsh"
-alias pre="pre-commit run -a"
-alias l='ls -lah --color=auto'
-alias ll='ls -lh --color=auto'
-alias la='ls -lAh --color=auto'
-
-#### Git aliases
-# Push
-alias gp="git push"
-# Push force with lease
-alias gpf="git push --force-with-lease --force-if-includes"
-# Push force
-alias gpf!="git push --force"
-# Pull
-alias gl="git pull"
-# Status
-alias gs="git status"
-# Add
-alias ga="git add"
-# Commit
-alias gc="git commit"
-# Checkout
-alias gcb="git checkout -b"
-# Switch
-alias gsw="git switch"
-# Stash
-alias gsta="git stash"
-# Pop
-alias gstp="git stash pop"
-# Push a new branch to remote
-alias new="git push --set-upstream origin \$(git branch --show-current)"
-# Squash all commits on the current branch into one
-alias squash="git reset --soft \$(git merge-base  \$(git remote show origin | grep \"HEAD branch\" | awk \"{print \\\$3}\") HEAD)"
-# Amend the last commit, force push
-alias amend="pre-commit run -a; git add .; git commit --no-edit --amend; git push --force-with-lease --force-if-includes"
-# Undo the last commit
-alias undo="git reset HEAD~"
-# Cleanup branches that are already merged or gone on remote
-alias cleanup="git checkout \$(git remote show origin | grep \"HEAD branch\" | awk \"{print \\\$3}\") && git pull && git fetch --prune && git branch -vv | awk \"/: gone]/{print \\\$1}\" | xargs -r -n 1 git branch -D"
-
-#### Terraform aliases
-alias tfi="terraform init"
-alias tfir="terraform init -reconfigure"
-alias tfiu="terraform init -upgrade"
-alias tfp="terraform plan"
-alias tfa="terraform apply"
-alias tfaa="terraform apply --auto-approve"
-alias tfd="terraform destroy"
-alias tfo="terraform output"
-alias tfs="terraform show"
-alias tfss="terraform state show"
-alias tfsl="terraform state list"
-alias tfg="terraform graph"
-
-# Source zsh functions
-source ~/.config/zsh_functions/git.zsh
+# Source zsh functions and aliases
+source ~/.config/zsh.d/core.zsh
+source ~/.config/zsh.d/git.zsh
 {{ if .isWorkComputer }}
-  source ~/.config/zsh_functions/content_aws.zsh
+  source ~/.config/zsh.d/content_aws.zsh
+  source ~/.config/zsh.d/terraform.zsh
 {{ end }}
 
 # These must be the last lines

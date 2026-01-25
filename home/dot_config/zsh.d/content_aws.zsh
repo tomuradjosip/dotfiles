@@ -102,8 +102,13 @@ content_logout() {
 }
 
 
-# Aliases
+#### Content AWS aliases
+
+# Login to kops on Content Staging or Production
 alias ckops="content_kops"
+# Login to kubectl on Content Staging or Production
 alias ckube="content_kubectl"
+# Setup for terraform on Content Staging or Production
 alias ctf="content_terraform"
+# Clear all AWS credentials
 alias cout="content_logout"
