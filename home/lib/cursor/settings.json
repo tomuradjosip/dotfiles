@@ -17,7 +17,7 @@
   "editor.minimap.enabled": false,
   "workbench.editor.empty.hint": "hidden",
   "cursor.cpp.disabledLanguages": ["plaintext", "scminput"],
-  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorTheme": "Cursor Dark",
   "cursor.cpp.enablePartialAccepts": true,
   "cursor.cmdk.useThemedDiffBackground": true,
   "diffEditor.ignoreTrimWhitespace": false,

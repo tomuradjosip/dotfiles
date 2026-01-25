@@ -109,37 +109,6 @@
         "alignment": "left",
         "segments": [
           {
-            "type": "aws",
-            "style": "plain",
-            "foreground": "p:peach",
-            "template": "  {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
-          }
-        ],
-        "newline": true
-      },
-      {
-        "type": "prompt",
-        "alignment": "right",
-        "overflow": "hide",
-        "segments": [
-          {
-            "type": "kubectl",
-            "style": "plain",
-            "foreground": "p:sky",
-            "template": " 󱃾 {{.Context}} ",
-            "options": {
-              "context_aliases": {
-                "staging.stats.superbet.k8s.local": "content-stage"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "type": "prompt",
-        "alignment": "left",
-        "segments": [
-          {
             "properties": {
               "cache_duration": "none"
             },

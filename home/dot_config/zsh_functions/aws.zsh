@@ -128,6 +128,8 @@ aws_assume() {
     else
       aws_login || return 1
     fi
+  else
+    aws_login || return 1
   fi
 
   # Check if already assumed the correct role with valid credentials
@@ -136,6 +138,7 @@ aws_assume() {
     if [[ $AWS_CREDENTIAL_EXPIRATION -gt $now_epoch ]]; then
       echo "Assumed role: $AWS_ASSUMED_ROLE_ARN"
       echo "Already assumed role. Credentials valid for: $(_aws_format_remaining "$AWS_CREDENTIAL_EXPIRATION")"
+      unset AWS_PROFILE
       return 0
     fi
   fi

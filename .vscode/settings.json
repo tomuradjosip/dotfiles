@@ -6,5 +6,28 @@
         "dot_*rc": "shellscript",
         "dot_*rc.tmpl": "shellscript",
         ".chezmoi*": "ini"
-    }
+    },
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#f15e0b",
+        "activityBar.background": "#f15e0b",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#0bf45f",
+        "activityBarBadge.foreground": "#15202b",
+        "commandCenter.border": "#e7e7e799",
+        "panel.border": "#f15e0b",
+        "sash.hoverBorder": "#f15e0b",
+        "sideBar.border": "#f15e0b",
+        "statusBar.background": "#c04b09",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#f15e0b",
+        "statusBarItem.remoteBackground": "#c04b09",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "tab.activeBorder": "#f15e0b",
+        "titleBar.activeBackground": "#c04b09",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#c04b0999",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#c04b09"
 }
