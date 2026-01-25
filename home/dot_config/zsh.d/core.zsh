@@ -23,3 +23,6 @@ alias l='ls -lah --color=auto'
 alias ll='ls -lh --color=auto'
 # Long format, all including hidden except . and ..
 alias la='ls -lAh --color=auto'
+
+# Display all custom aliases and functions from sourced zsh.d files
+alias h="help"

@@ -28,7 +28,7 @@ function acpn() {
   git commit -m $1 && git push --set-upstream origin $(git branch --show-current)
 }
 
-# Amend but change the commit message, push force with lease
+# Amend but change the commit message, force push with lease
 function amendm() {
   pre-commit run -a
   git add .
