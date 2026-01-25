@@ -1,0 +1,40 @@
+[sso-session sbcloud]
+sso_start_url = https://d-99676716f6.awsapps.com/start
+sso_region = eu-central-1
+sso_registration_scopes = sso:account:access
+
+[default]
+output = json
+cli_pager =
+region = eu-central-1
+sso_session = sbcloud
+sso_account_id = 798642997822
+sso_role_name = PowerUserAccess
+
+[profile ContentStaging]
+sso_session = sbcloud
+sso_account_id = 617709483204
+sso_role_name = PowerUserAccess
+region = eu-west-1
+cli_pager =
+
+[profile ContentProduction]
+sso_session = sbcloud
+sso_account_id = 486705210074
+sso_role_name = PowerUserAccess
+region = eu-west-1
+cli_pager =
+
+[profile BetlerGamingDev]
+sso_session = sbcloud
+sso_account_id = 278630832066
+sso_role_name = PowerUserAccess
+region = eu-west-1
+cli_pager =
+
+[profile SupertestaStaging]
+sso_session = sbcloud
+sso_account_id = 617709483204
+sso_role_name = PowerUserAccess
+region = eu-west-1
+cli_pager =
