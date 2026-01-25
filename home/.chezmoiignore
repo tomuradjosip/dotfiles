@@ -1,6 +1,6 @@
 README.md
 lib/
 
-{{ if not .isWorkComputer }}
+{{ if .isHomeComputer }}
 .config/aws/config
 {{ end }}
