@@ -28,9 +28,17 @@ function acpn() {
   git commit -m $1 && git push --set-upstream origin $(git branch --show-current)
 }
 
+# Amend but don't change the commit message, force push with lease
+function amend() {
+  if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi
+  git add .
+  git commit --no-edit --amend
+  git push --force-with-lease --force-if-includes
+}
+
 # Amend but change the commit message, force push with lease
 function amendm() {
-  pre-commit run -a
+  if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi
   git add .
   git commit --no-edit --amend -m "$1"
   git push --force-with-lease --force-if-includes
@@ -65,8 +73,6 @@ alias gstp="git stash pop"
 alias new="git push --set-upstream origin \$(git branch --show-current)"
 # Squash all commits on the current branch into one
 alias squash="git reset --soft \$(git merge-base  \$(git remote show origin | grep \"HEAD branch\" | awk \"{print \\\$3}\") HEAD)"
-# Amend but don't change the commit message, force push with lease
-alias amend="pre-commit run -a; git add .; git commit --no-edit --amend; git push --force-with-lease --force-if-includes"
 # Undo the last commit
 alias undo="git reset HEAD~"
 # Cleanup branches that are already merged or gone on remote
