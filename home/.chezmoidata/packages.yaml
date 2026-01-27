@@ -11,6 +11,7 @@ packages:
             - "chezmoi"
             - "zsh-autosuggestions"
             - "zsh-syntax-highlighting"
+            - "zsh-history-substring-search"
             - "jandedobbeleer/oh-my-posh/oh-my-posh"
             - "dockutil"
             - "pre-commit"

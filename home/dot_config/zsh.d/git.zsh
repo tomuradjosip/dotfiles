@@ -14,6 +14,12 @@ function acp() {
   git commit -m $1 && git push
 }
 
+# Commit with message, push
+function gcp() {
+  if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi
+  git commit -m $1 && git push
+}
+
 # Add all files, commit with message, force push
 function acpf() {
   if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi
@@ -32,16 +38,14 @@ function acpn() {
 function amend() {
   if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi
   git add .
-  git commit --no-edit --amend
-  git push --force-with-lease --force-if-includes
+  git commit --no-edit --amend && git push --force-with-lease --force-if-includes
 }
 
 # Amend but change the commit message, force push with lease
 function amendm() {
   if [ -f .pre-commit-config.yaml ]; then pre-commit run -a; fi
   git add .
-  git commit --no-edit --amend -m "$1"
-  git push --force-with-lease --force-if-includes
+  git commit --no-edit --amend -m "$1" && git push --force-with-lease --force-if-includes
 }
 
 
