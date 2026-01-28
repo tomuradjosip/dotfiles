@@ -34,6 +34,7 @@ packages:
             - "rectangle"
             - "alt-tab"
             - "stats"
+            - "iterm2"
         mas: []
 
     work:
@@ -59,7 +60,6 @@ packages:
             - "velero"
         casks:
             - "teleport-cli"
-            - "aws-vault-binary"
         mas:
             - name: "Zone Share:Screen Sharing Tool"
               id: 6743621581
