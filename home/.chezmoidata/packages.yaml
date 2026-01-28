@@ -16,6 +16,7 @@ packages:
             - "dockutil"
             - "pre-commit"
             - "vim"
+            - "gh"
         casks:
             - "brave-browser"
             - "cursor"
@@ -58,6 +59,7 @@ packages:
             - "kops"
             - "argocd"
             - "velero"
+            - "telnet"
         casks:
             - "teleport-cli"
         mas:
