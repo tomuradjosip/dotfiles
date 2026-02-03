@@ -40,5 +40,6 @@
   "peacock.affectTabActiveBorder": true,
   "vs-kubernetes": {
     "vs-kubernetes.crd-code-completion": "disabled"
-  }
+  },
+  "window.confirmSaveUntitledWorkspace": false
 }
