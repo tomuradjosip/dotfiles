@@ -1,0 +1,11 @@
+#!/bin/bash
+set -eufo pipefail
+
+ALIASES_DIR="$HOME/.config/aliases"
+ALIAS_REPO_URL="{{ .aliasRepoUrl }}"
+
+if [[ -d "$ALIASES_DIR/.git" ]]; then
+  git -C "$ALIASES_DIR" pull --ff-only
+else
+  git clone "$ALIAS_REPO_URL" "$ALIASES_DIR"
+fi

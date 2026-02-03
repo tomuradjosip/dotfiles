@@ -14,12 +14,12 @@ export GITHUB_TOKEN=$(cat ~/.config/git/token)
   source "$HOME/.local/share/zsh/plugins/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh"
 
 # Source zsh functions and aliases
-source ~/.config/zsh.d/core.zsh
-source ~/.config/zsh.d/help.zsh
-source ~/.config/zsh.d/git.zsh
+source ~/.config/aliases/core.zsh
+source ~/.config/aliases/help.zsh
+source ~/.config/aliases/git.zsh
 {{ if .isWorkComputer }}
-  source ~/.config/zsh.d/content_aws.zsh
-  source ~/.config/zsh.d/terraform.zsh
+  source ~/.config/aliases/content_aws.zsh
+  source ~/.config/aliases/terraform.zsh
 {{ end }}
 
 # These must be the last lines
