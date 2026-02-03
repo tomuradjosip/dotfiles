@@ -9,3 +9,14 @@ if [[ -d "$ALIASES_DIR/.git" ]]; then
 else
   git clone "$ALIAS_REPO_URL" "$ALIASES_DIR"
 fi
+
+{{ if .isWorkComputer }}
+ALIASES_PRIVATE_DIR="$HOME/.config/aliases-private"
+ALIAS_PRIVATE_REPO_URL="{{ .aliasPrivateRepoUrl }}"
+
+if [[ -d "$ALIASES_PRIVATE_DIR/.git" ]]; then
+  git -C "$ALIASES_PRIVATE_DIR" pull --ff-only
+else
+  git clone "$ALIAS_PRIVATE_REPO_URL" "$ALIASES_PRIVATE_DIR"
+fi
+{{ end }}
