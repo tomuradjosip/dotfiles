@@ -67,8 +67,10 @@ packages:
               id: 6743621581
 
     home:
-        taps: []
-        brews: []
+        taps:
+            - "lizardbyte/homebrew"
+        brews:
+            - "lizardbyte/homebrew/sunshine"
         casks:
             - "orcaslicer"
             - "autodesk-fusion"
