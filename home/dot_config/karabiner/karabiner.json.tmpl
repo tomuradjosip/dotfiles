@@ -21,6 +21,26 @@
                     {{- /* Keep F5 as regular F5 key (disable dictation activation) */ -}}
                     "from": { "key_code": "f5" },
                     "to": [{ "key_code": "f5" }]
+                },
+                {
+                    {{- /* F7 to navigate to previous tab (Ctrl+Shift+Tab) */ -}}
+                    "from": { "key_code": "f7" },
+                    "to": [
+                        {
+                            "key_code": "tab",
+                            "modifiers": ["left_control", "left_shift"]
+                        }
+                    ]
+                },
+                {
+                    {{- /* F9 to navigate to next tab (Ctrl+Tab) */ -}}
+                    "from": { "key_code": "f9" },
+                    "to": [
+                        {
+                            "key_code": "tab",
+                            "modifiers": ["left_control"]
+                        }
+                    ]
                 }
             ],
             "name": "Default profile",
