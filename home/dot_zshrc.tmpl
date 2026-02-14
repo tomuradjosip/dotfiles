@@ -1,5 +1,5 @@
-# Add dir to path for tfswitch
-export PATH="$PATH:/Users/josiptomurad/bin"
+# XDG local bin + tfswitch
+export PATH="$HOME/.local/bin:$PATH:/Users/josiptomurad/bin"
 {{- if .isWorkComputer }}
 # GPG configuration
 export GPG_TTY=$(tty)

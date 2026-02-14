@@ -71,6 +71,8 @@ packages:
             - "lizardbyte/homebrew"
         brews:
             - "lizardbyte/homebrew/sunshine"
+            - "restic"
+            - "sleepwatcher"
         casks:
             - "orcaslicer"
             - "autodesk-fusion"

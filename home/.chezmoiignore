@@ -2,5 +2,12 @@ README.md
 lib/
 
 {{ if .isHomeComputer }}
-.config/aws/config
+.aws
+.aws/config
+{{ end }}
+
+{{ if .isWorkComputer }}
+.local/bin/restic-laptop-backup.sh
+.local/bin/restic-laptop-backup-on-wake.sh
+Library/LaunchAgents/com.josip.restic-laptop-backup.plist
 {{ end }}
