@@ -9,5 +9,6 @@ lib/
 {{ if .isWorkComputer }}
 .local/bin/restic-laptop-backup.sh
 .local/bin/restic-laptop-backup-on-wake.sh
+.local/bin/restic-laptop-backup-status.sh
 Library/LaunchAgents/com.josip.restic-laptop-backup.plist
 {{ end }}
