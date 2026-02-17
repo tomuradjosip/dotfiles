@@ -41,5 +41,6 @@
   "vs-kubernetes": {
     "vs-kubernetes.crd-code-completion": "disabled"
   },
-  "window.confirmSaveUntitledWorkspace": false
+  "window.confirmSaveUntitledWorkspace": false,
+  "update.mode": "manual"
 }
