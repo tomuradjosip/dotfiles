@@ -4,6 +4,8 @@ lib/
 {{ if .isHomeComputer }}
 .aws
 .aws/config
+.hammerspoon
+.hammerspoon/init.lua
 {{ end }}
 
 {{ if .isWorkComputer }}

@@ -62,6 +62,7 @@ packages:
             - "telnet"
         casks:
             - "teleport-cli"
+            - "hammerspoon"
         mas:
             - name: "Zone Share:Screen Sharing Tool"
               id: 6743621581
