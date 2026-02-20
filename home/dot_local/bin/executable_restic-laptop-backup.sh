@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Restic backup from this Mac to NixOS server at /persist/backup/laptop-josip
+# Restic backup from this Mac to NixOS server at /bulk/backup/laptop-josip
 # Uses SSH config (Host server / server-ip) for SFTP — ensure you can: ssh server
 #
 # Prerequisites: restic installed via chezmoi (home packages)
@@ -15,7 +15,7 @@ ts() { while IFS= read -r line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; do
 # Must match an SSH Host from ~/.ssh/config (e.g. server or server-ip)
 SSH_HOST="${RESTIC_SSH_HOST:-server}"
 SSH_USER="${RESTIC_SSH_USER:-toka}"
-REMOTE_PATH="/persist/backup/laptop-josip"
+REMOTE_PATH="/bulk/backup/laptop-josip"
 export RESTIC_REPOSITORY="sftp:${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}"
 
 # Optional: cache dir (speeds up repeated runs)
