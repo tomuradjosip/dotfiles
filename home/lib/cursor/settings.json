@@ -2,7 +2,8 @@
   "files.trimTrailingWhitespace": true,
   "files.associations": {
     "*.tpl": "shellscript",
-    ".env.production": "properties"
+    ".env.production": "properties",
+    "*.eex": "javascript"
   },
   "git.autofetch": true,
   "vsicons.presets.hideExplorerArrows": true,
@@ -42,5 +43,13 @@
     "vs-kubernetes.crd-code-completion": "disabled"
   },
   "window.confirmSaveUntitledWorkspace": false,
-  "update.mode": "manual"
+  "update.mode": "manual",
+  "workbench.colorCustomizations": {
+    "diffEditor.insertedTextBackground": "#11451a97",
+    "diffEditor.removedTextBackground": "#700e3eab",
+    "diffEditor.insertedLineBackground": "#0e2e09a6",
+    "diffEditor.removedLineBackground": "#39031dab"
+  },
+  "git.blame.editorDecoration.enabled": true,
+  "gitlens.currentLine.enabled": false
 }

@@ -60,6 +60,7 @@ packages:
             - "argocd"
             - "velero"
             - "telnet"
+            - "pinentry-mac"
         casks:
             - "teleport-cli"
             - "hammerspoon"

@@ -1,3 +1,20 @@
+# Command history
+HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
+[[ -d ${HISTFILE:h} ]] || mkdir -p ${HISTFILE:h}
+HISTSIZE=20000
+SAVEHIST=20000
+setopt EXTENDED_HISTORY       # write timestamps so SHARE_HISTORY can merge
+setopt SHARE_HISTORY          # real-time sync across all sessions
+setopt HIST_IGNORE_ALL_DUPS   # remove older duplicate when new one is added
+setopt HIST_FIND_NO_DUPS      # skip dupes when searching with Ctrl-R / arrows
+setopt HIST_REDUCE_BLANKS     # trim superfluous whitespace
+setopt HIST_IGNORE_SPACE      # prefix a command with space to keep it out of history
+
+# Force-refresh $history from the file before every prompt so that
+# zsh-autosuggestions (which reads $history) sees commands from other sessions.
+_zsh_shared_history_refresh() { fc -R }
+precmd_functions+=(_zsh_shared_history_refresh)
+
 # XDG local bin + tfswitch
 export PATH="$HOME/.local/bin:$PATH:/Users/josiptomurad/bin"
 {{- if .isWorkComputer }}
