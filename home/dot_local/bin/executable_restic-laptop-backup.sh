@@ -27,6 +27,7 @@ BACKUP_PATHS=(
   "$HOME/.config/aliases"
   "$HOME/.config/aliases-private"
   "$HOME/.local/share/chezmoi"
+  "$HOME/.local/state/zsh/history"
   "$HOME/3Dprinting"
   "$HOME/archive"
   "$HOME/git"
