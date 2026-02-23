@@ -47,6 +47,16 @@
             "selected": true,
             "simple_modifications": [
                 {
+                    {{- /* Fix ISO key detection: macOS misidentifies the built-in keyboard as ANSI,
+                           so the ISO key next to Y sends grave_accent_and_tilde instead of non_us_backslash */ -}}
+                    "from": { "key_code": "grave_accent_and_tilde" },
+                    "to": [{ "key_code": "non_us_backslash" }]
+                },
+                {
+                    "from": { "key_code": "non_us_backslash" },
+                    "to": [{ "key_code": "grave_accent_and_tilde" }]
+                },
+                {
                     {{- /* Disable Fn+D to prevent accidental dictation activation */ -}}
                     "from": {
                         "key_code": "d",
