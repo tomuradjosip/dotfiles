@@ -39,6 +39,13 @@ source ~/.config/aliases/git.zsh
   source ~/.config/aliases/terraform.zsh
 {{ end }}
 
+# nvm
+{{ if .isWorkComputer }}
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && source "$(brew --prefix)/opt/nvm/nvm.sh"
+  [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && source "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
+{{ end }}
+
 # These must be the last lines
 eval "$(oh-my-posh init zsh --config $HOME/.config/terminal/terminal_theme.json)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
