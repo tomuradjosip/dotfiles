@@ -61,6 +61,7 @@ packages:
             - "velero"
             - "telnet"
             - "pinentry-mac"
+            - "docker"
         casks:
             - "teleport-cli"
             - "hammerspoon"
