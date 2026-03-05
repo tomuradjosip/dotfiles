@@ -61,6 +61,7 @@ packages:
             - "telnet"
             - "pinentry-mac"
             - "docker"
+            - "colima"
         casks:
             - "teleport-cli"
             - "hammerspoon"
