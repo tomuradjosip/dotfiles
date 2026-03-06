@@ -1,3 +1,6 @@
+{{ if .isWorkComputer }}
+Include /Users/josiptomurad/.colima/ssh_config
+{{ end }}
   Host *
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_github
