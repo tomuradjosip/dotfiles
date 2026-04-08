@@ -33,7 +33,6 @@ packages:
             - "rar"
             - "karabiner-elements"
             - "rectangle"
-            - "alt-tab"
             - "stats"
             - "iterm2"
         mas: []
@@ -62,6 +61,7 @@ packages:
             - "pinentry-mac"
             - "docker"
             - "colima"
+            - "alt-tab"
         casks:
             - "teleport-cli"
             - "hammerspoon"
