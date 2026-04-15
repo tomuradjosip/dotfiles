@@ -72,10 +72,13 @@ packages:
     home:
         taps:
             - "lizardbyte/homebrew"
+            - "macos-fuse-t/homebrew-cask"
         brews:
             - "restic"
             - "sleepwatcher"
         casks:
+            - "fuse-t"
+            - "fuse-t-sshfs"
             - "orcaslicer"
             - "autodesk-fusion"
             - "discord"
