@@ -73,7 +73,6 @@ packages:
         taps:
             - "lizardbyte/homebrew"
         brews:
-            - "lizardbyte/homebrew/sunshine"
             - "restic"
             - "sleepwatcher"
         casks:
@@ -90,6 +89,7 @@ packages:
             - "anydesk"
             - "libreoffice"
             - "moonlight"
+            - "rustdesk"
         mas:
             - name: "Wireguard"
               id: 1451685025
