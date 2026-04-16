@@ -26,7 +26,6 @@ packages:
             - "raycast"
             - "sublime-text"
             - "visual-studio-code"
-            - "logi-options+"
             - "google-chrome"
             - "topnotch"
             - "meld"
@@ -35,6 +34,7 @@ packages:
             - "rectangle"
             - "stats"
             - "iterm2"
+            - "alt-tab"
         mas: []
 
     work:
@@ -61,8 +61,8 @@ packages:
             - "pinentry-mac"
             - "docker"
             - "colima"
-            - "alt-tab"
         casks:
+            - "logi-options+"
             - "teleport-cli"
             - "hammerspoon"
         mas:

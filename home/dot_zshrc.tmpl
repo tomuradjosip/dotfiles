@@ -39,6 +39,9 @@ source ~/.config/aliases/github.zsh
   source ~/.config/aliases-private/content_aws.zsh
   source ~/.config/aliases/terraform.zsh
 {{ end }}
+{{ if .isHomeComputer }}
+  source ~/.config/aliases-private/klippi.zsh
+{{ end }}
 
 # nvm
 {{ if .isWorkComputer }}
