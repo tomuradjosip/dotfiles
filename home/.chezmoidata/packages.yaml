@@ -35,6 +35,7 @@ packages:
             - "stats"
             - "iterm2"
             - "alt-tab"
+            - "rustdesk"
         mas: []
 
     work:
@@ -92,7 +93,6 @@ packages:
             - "anydesk"
             - "libreoffice"
             - "moonlight"
-            - "rustdesk"
         mas:
             - name: "Wireguard"
               id: 1451685025
