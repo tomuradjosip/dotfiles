@@ -105,10 +105,5 @@
     {
         "key": "shift+cmd+k",
         "command": "-composer.openAsBar"
-    },
-    {
-        "key": "alt+cmd+s",
-        "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
-        "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
     }
 ]
