@@ -46,7 +46,6 @@ packages:
             - "kubernetes-cli"
             - "krew"
             - "nvm"
-            - "warrensbox/tap/tfswitch"
             - "awscli"
             - "helm"
             - "terraform-docs"
@@ -62,10 +61,12 @@ packages:
             - "pinentry-mac"
             - "docker"
             - "colima"
+            - "yq"
         casks:
             - "logi-options+"
             - "teleport-cli"
             - "hammerspoon"
+            - "warrensbox/tap/tfswitch"
         mas:
             - name: "Zone Share:Screen Sharing Tool"
               id: 6743621581
