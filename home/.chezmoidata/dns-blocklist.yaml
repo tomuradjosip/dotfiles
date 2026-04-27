@@ -1,0 +1,7 @@
+dnsBlocklist:
+    - "api.rustdesk.com"
+    - "rs-ny.rustdesk.com"
+    - "rs-sg.rustdesk.com"
+    - "rs-de.rustdesk.com"
+    - "id.rustdesk.com"
+    - "relay.rustdesk.com"

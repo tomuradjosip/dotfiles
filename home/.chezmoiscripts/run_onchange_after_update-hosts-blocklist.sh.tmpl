@@ -1,0 +1,24 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+HOSTS_FILE="/etc/hosts"
+MARKER_BEGIN="# >>> chezmoi dns blocklist >>>"
+MARKER_END="# <<< chezmoi dns blocklist <<<"
+
+read -r -d '' BLOCKLIST <<'EOF' || true
+{{ range .dnsBlocklist -}}
+0.0.0.0 {{ . }}
+:: {{ . }}
+{{ end -}}
+EOF
+
+sudo sed -i '' "/${MARKER_BEGIN}/,/${MARKER_END}/d" "${HOSTS_FILE}"
+
+printf '\n%s\n%s\n%s\n' "${MARKER_BEGIN}" "${BLOCKLIST}" "${MARKER_END}" \
+    | sudo tee -a "${HOSTS_FILE}" >/dev/null
+
+sudo dscacheutil -flushcache
+sudo killall -HUP mDNSResponder
+{{ end -}}
