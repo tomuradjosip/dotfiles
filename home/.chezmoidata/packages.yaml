@@ -94,6 +94,7 @@ packages:
             - "anydesk"
             - "libreoffice"
             - "moonlight"
+            - "gimp"
         mas:
             - name: "Wireguard"
               id: 1451685025
