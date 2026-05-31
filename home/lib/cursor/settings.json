@@ -52,5 +52,6 @@
     "diffEditor.removedLineBackground": "#39031dab"
   },
   "git.blame.editorDecoration.enabled": true,
-  "gitlens.currentLine.enabled": false
+  "gitlens.currentLine.enabled": false,
+  "window.autoDetectColorScheme": false
 }

@@ -67,6 +67,8 @@ packages:
             - "teleport-cli"
             - "hammerspoon"
             - "warrensbox/tap/tfswitch"
+            - "claude"
+            - "slack"
         mas:
             - name: "Zone Share:Screen Sharing Tool"
               id: 6743621581
