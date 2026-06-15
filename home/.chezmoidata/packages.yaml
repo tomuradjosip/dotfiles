@@ -49,7 +49,6 @@ packages:
             - "awscli"
             - "helm"
             - "terraform-docs"
-            - "tflint"
             - "trivy"
             - "k9s"
             - "crossplane"
@@ -62,11 +61,13 @@ packages:
             - "docker"
             - "colima"
             - "yq"
+            - "sops"
         casks:
             - "logi-options+"
             - "teleport-cli"
             - "hammerspoon"
             - "warrensbox/tap/tfswitch"
+            - "terraform-linters/tap/tflint"
             - "claude"
             - "slack"
         mas:

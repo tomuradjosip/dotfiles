@@ -1,15 +1,18 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-brew bundle --cleanup --file=/dev/stdin <<EOF
+brewfile="$(mktemp)"
+trap 'rm -f "$brewfile"' EXIT
+
+cat > "$brewfile" <<EOF
 {{ range .packages.universal.taps -}}
-tap {{ . | quote | replace " " "\", \"" }}
+tap {{ . | quote | replace " " "\", \"" }}, trusted: true
 {{ end -}}
 {{ range .packages.universal.brews -}}
-brew {{ . | quote }}
+brew {{ . | quote }}{{ if contains "/" . }}, trusted: true{{ end }}
 {{ end -}}
 {{ range .packages.universal.casks -}}
-cask {{ . | quote }}
+cask {{ . | quote }}{{ if contains "/" . }}, trusted: true{{ end }}
 {{ end -}}
 {{ range .packages.universal.mas -}}
 mas {{ .name | quote }}, id: {{ .id }}
@@ -17,13 +20,13 @@ mas {{ .name | quote }}, id: {{ .id }}
 
 {{- if .isWorkComputer }}
 {{ range .packages.work.taps -}}
-tap {{ . | quote | replace " " "\", \"" }}
+tap {{ . | quote | replace " " "\", \"" }}, trusted: true
 {{ end -}}
 {{ range .packages.work.brews -}}
-brew {{ . | quote }}
+brew {{ . | quote }}{{ if contains "/" . }}, trusted: true{{ end }}
 {{ end -}}
 {{ range .packages.work.casks -}}
-cask {{ . | quote }}
+cask {{ . | quote }}{{ if contains "/" . }}, trusted: true{{ end }}
 {{ end -}}
 {{ range .packages.work.mas -}}
 mas {{ .name | quote }}, id: {{ .id }}
@@ -32,17 +35,20 @@ mas {{ .name | quote }}, id: {{ .id }}
 
 {{- if .isHomeComputer }}
 {{ range .packages.home.taps -}}
-tap {{ . | quote | replace " " "\", \"" }}
+tap {{ . | quote | replace " " "\", \"" }}, trusted: true
 {{ end -}}
 {{ range .packages.home.brews -}}
-brew {{ . | quote }}
+brew {{ . | quote }}{{ if contains "/" . }}, trusted: true{{ end }}
 {{ end -}}
 {{ range .packages.home.casks -}}
-cask {{ . | quote }}
+cask {{ . | quote }}{{ if contains "/" . }}, trusted: true{{ end }}
 {{ end -}}
 {{ range .packages.home.mas -}}
 mas {{ .name | quote }}, id: {{ .id }}
 {{ end -}}
 {{- end }}
 EOF
+
+brew bundle --file="$brewfile"
+brew bundle cleanup --force --file="$brewfile"
 {{ end -}}
