@@ -32,6 +32,7 @@ BACKUP_PATHS=(
   "$HOME/archive"
   "$HOME/git"
   "$HOME/Library/Application Support/OrcaSlicer"
+  "$HOME/AndroidDebloater"
 )
 
 # Retention (prune after backup)
