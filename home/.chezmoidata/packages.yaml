@@ -17,6 +17,7 @@ packages:
             - "pre-commit"
             - "vim"
             - "gh"
+            - "sleepwatcher"
         casks:
             - "brave-browser"
             - "cursor"
@@ -80,7 +81,6 @@ packages:
             - "macos-fuse-t/homebrew-cask"
         brews:
             - "restic"
-            - "sleepwatcher"
         casks:
             - "fuse-t"
             - "fuse-t-sshfs"
