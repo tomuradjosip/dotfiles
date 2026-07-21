@@ -53,5 +53,9 @@
   },
   "git.blame.editorDecoration.enabled": true,
   "gitlens.currentLine.enabled": false,
-  "window.autoDetectColorScheme": false
+  "window.autoDetectColorScheme": false,
+  "remote.SSH.remotePlatform": {
+    "mikrotik": "linux"
+  },
+  "routeroslsp.baseUrl": ""
 }
