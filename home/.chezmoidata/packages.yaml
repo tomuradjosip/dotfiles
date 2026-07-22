@@ -37,6 +37,7 @@ packages:
             - "iterm2"
             - "alt-tab"
             - "rustdesk"
+            - "notunes"
         mas: []
 
     work:
