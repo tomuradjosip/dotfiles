@@ -64,6 +64,7 @@ packages:
             - "colima"
             - "yq"
             - "sops"
+            - "fastly"
         casks:
             - "logi-options+"
             - "teleport-cli"
