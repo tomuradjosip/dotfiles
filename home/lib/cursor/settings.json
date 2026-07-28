@@ -10,7 +10,7 @@
   "workbench.tree.indent": 24,
   "workbench.tree.renderIndentGuides": "always",
   "workbench.view.alwaysShowHeaderActions": true,
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0.6,
   "git.confirmSync": false,
   "editor.inlineSuggest.showToolbar": "always",
   "terminal.integrated.defaultLocation": "view",
