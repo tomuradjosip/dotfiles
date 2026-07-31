@@ -49,6 +49,16 @@ mas {{ .name | quote }}, id: {{ .id }}
 {{- end }}
 EOF
 
-brew bundle --file="$brewfile"
+# Install/upgrade everything. Don't let one self-updating cask abort the apply.
+brew bundle --file="$brewfile" || bundle_failed=1
+
+# Self-heal: apps like Chrome update themselves in place, which leaves
+# Homebrew's records stale and makes the next `brew bundle` upgrade fail with
+# "It seems there is already an App at ...". A forced reinstall rewrites the
+# cask's install receipt (INSTALL_RECEIPT.json), so future upgrades are clean.
+if [ -n "${bundle_failed:-}" ]; then
+  brew bundle --file="$brewfile" --force
+fi
+
 brew bundle cleanup --force --file="$brewfile"
 {{ end -}}
