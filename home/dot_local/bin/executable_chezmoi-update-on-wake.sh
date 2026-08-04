@@ -28,4 +28,8 @@ if [[ -f "$LAST_FILE" ]]; then
 fi
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') On-wake: showing update prompt."
+
+# Tells the chezmoi scripts run by the update that they must not reload this
+# LaunchAgent, since unloading it would kill this very script.
+export CHEZMOI_UPDATE_ON_WAKE=1
 exec "$(dirname "$0")/chezmoi-update-prompt.sh"

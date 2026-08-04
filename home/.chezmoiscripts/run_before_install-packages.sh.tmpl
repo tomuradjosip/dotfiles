@@ -57,8 +57,18 @@ brew bundle --file="$brewfile" || bundle_failed=1
 # "It seems there is already an App at ...". A forced reinstall rewrites the
 # cask's install receipt (INSTALL_RECEIPT.json), so future upgrades are clean.
 if [ -n "${bundle_failed:-}" ]; then
-  brew bundle --file="$brewfile" --force
+  brew bundle --file="$brewfile" --force || retry_failed=1
 fi
 
 brew bundle cleanup --force --file="$brewfile"
+
+# Record the outcome, since failing here would abort the apply. Read by
+# chezmoi-update-prompt.sh, which alerts about it after the update.
+failed_marker="$HOME/.local/state/chezmoi-packages-failed"
+mkdir -p "$(dirname "$failed_marker")"
+if [ -n "${retry_failed:-}" ]; then
+  date '+%Y-%m-%d %H:%M:%S' > "$failed_marker"
+else
+  rm -f "$failed_marker"
+fi
 {{ end -}}
