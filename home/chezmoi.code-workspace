@@ -1,0 +1,53 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../.config/aliases"
+		},
+		{
+			"path": "../../../../.config/aliases-private"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.toml.tmpl": "ini",
+			"*.yaml.tmpl": "ini",
+			"*.sh.tmpl": "shellscript",
+			"dot_*rc": "shellscript",
+			"dot_*rc.tmpl": "shellscript",
+			".chezmoi*": "ini"
+		},
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#f15e0b",
+			"activityBar.background": "#f15e0b",
+			"activityBar.foreground": "#15202b",
+			"activityBar.inactiveForeground": "#15202b99",
+			"activityBarBadge.background": "#0bf45f",
+			"activityBarBadge.foreground": "#15202b",
+			"commandCenter.border": "#e7e7e799",
+			"panel.border": "#f15e0b",
+			"sash.hoverBorder": "#f15e0b",
+			"sideBar.border": "#f15e0b",
+			"statusBar.background": "#c04b09",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#f15e0b",
+			"statusBarItem.remoteBackground": "#0ad553",
+			"statusBarItem.remoteForeground": "#e7e7e7",
+			"tab.activeBorder": "#f15e0b",
+			"titleBar.activeBackground": "#c04b09",
+			"titleBar.activeForeground": "#595959",
+			"titleBar.inactiveBackground": "#c04b0999",
+			"titleBar.inactiveForeground": "#e7e7e799",
+			"activityBarTop.activeBackground": "#f15e0b",
+			"activityBarTop.background": "#f15e0b",
+			"activityBarTop.foreground": "#15202b",
+			"activityBarTop.inactiveForeground": "#15202b99",
+			"commandCenter.foreground": "#595959",
+			"statusBar.debuggingBackground": "#c04b09",
+			"statusBar.debuggingForeground": "#e7e7e7"
+		},
+		"peacock.color": "#c04b09"
+	}
+}

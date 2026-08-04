@@ -55,7 +55,8 @@
   "gitlens.currentLine.enabled": false,
   "window.autoDetectColorScheme": false,
   "remote.SSH.remotePlatform": {
-    "mikrotik": "linux"
+    "mikrotik": "linux",
+    "server": "linux"
   },
   "routeroslsp.baseUrl": ""
 }
