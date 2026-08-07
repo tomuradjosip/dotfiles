@@ -18,6 +18,7 @@ packages:
             - "vim"
             - "gh"
             - "sleepwatcher"
+            - "nvm"
         casks:
             - "brave-browser"
             - "cursor"
@@ -47,7 +48,6 @@ packages:
             - "gnupg"
             - "kubernetes-cli"
             - "krew"
-            - "nvm"
             - "awscli"
             - "helm"
             - "terraform-docs"
@@ -83,6 +83,8 @@ packages:
             - "macos-fuse-t/homebrew-cask"
         brews:
             - "restic"
+            - "podman"
+            - "podman-compose"
         casks:
             - "fuse-t"
             - "fuse-t-sshfs"
