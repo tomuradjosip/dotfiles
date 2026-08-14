@@ -5,6 +5,11 @@ Include /Users/josiptomurad/.colima/ssh_config
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_github
 {{ if .isHomeComputer }}
+  Host server.toka.lan
+    HostName server.toka.lan
+    User toka
+    IdentityFile ~/.ssh/id_homelab
+
   Host server
     HostName server
     User toka

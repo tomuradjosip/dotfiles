@@ -56,7 +56,8 @@
   "window.autoDetectColorScheme": false,
   "remote.SSH.remotePlatform": {
     "mikrotik": "linux",
-    "server": "linux"
+    "server": "linux",
+    "server.toka.lan": "linux"
   },
   "routeroslsp.baseUrl": ""
 }
