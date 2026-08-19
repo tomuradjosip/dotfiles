@@ -5,7 +5,7 @@ set -eufo pipefail
 # Configure Dock
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock show-recents -bool false
-defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock orientation -string "right"
 
 trap 'killall Dock' EXIT
 
