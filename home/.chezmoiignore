@@ -4,6 +4,8 @@ lib/
 {{ if .isHomeComputer }}
 .aws
 .aws/config
+.cursor
+.cursor/mcp.json
 .hammerspoon
 .hammerspoon/init.lua
 {{ end }}

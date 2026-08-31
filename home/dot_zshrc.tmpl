@@ -20,8 +20,9 @@ export PATH="$HOME/.local/bin:$PATH:/Users/josiptomurad/bin"
 {{- if .isWorkComputer }}
 # GPG configuration
 export GPG_TTY=$(tty)
-# GitHub token (in ~/.config/git/token)
-export GITHUB_TOKEN=$(cat ~/.config/git/token)
+# GitHub PAT (classic) with scopes: repo, workflow, read:org, gist, notifications, project
+# Save to keychain: security add-generic-password -U -a "$USER" -s GITHUB_TOKEN -w
+export GITHUB_TOKEN="$(security find-generic-password -a "$USER" -s GITHUB_TOKEN -w 2>/dev/null)"
 {{- end }}
 
 # ── zsh plugins (installed to ~/.local/share/zsh/plugins/) ────────────────────

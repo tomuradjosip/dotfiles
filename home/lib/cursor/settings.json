@@ -59,5 +59,6 @@
     "server": "linux",
     "server.toka.lan": "linux"
   },
-  "routeroslsp.baseUrl": ""
+  "routeroslsp.baseUrl": "",
+  "cursor.composer.queueMessageDefaultBehavior": "steer"
 }
