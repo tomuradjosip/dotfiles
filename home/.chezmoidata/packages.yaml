@@ -19,6 +19,7 @@ packages:
             - "gh"
             - "sleepwatcher"
             - "nvm"
+            - "ripgrep"
         casks:
             - "brave-browser"
             - "cursor"
