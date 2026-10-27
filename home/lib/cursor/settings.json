@@ -60,5 +60,7 @@
     "server.toka.lan": "linux"
   },
   "routeroslsp.baseUrl": "",
-  "cursor.composer.queueMessageDefaultBehavior": "steer"
+  "cursor.composer.queueMessageDefaultBehavior": "steer",
+  "terminal.integrated.tabs.enabled": false,
+  "cursor.general.disableHttp2": true
 }
