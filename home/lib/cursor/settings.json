@@ -61,6 +61,5 @@
   },
   "routeroslsp.baseUrl": "",
   "cursor.composer.queueMessageDefaultBehavior": "steer",
-  "terminal.integrated.tabs.enabled": false,
-  "cursor.general.disableHttp2": true
+  "terminal.integrated.tabs.enabled": false
 }

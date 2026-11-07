@@ -74,6 +74,7 @@ packages:
             - "terraform-linters/tap/tflint"
             - "claude"
             - "slack"
+            - "caffeine"
         mas:
             - name: "Zone Share:Screen Sharing Tool"
               id: 6743621581
