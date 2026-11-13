@@ -66,6 +66,7 @@ packages:
             - "yq"
             - "sops"
             - "fastly"
+            - "mcp-grafana"
         casks:
             - "logi-options+"
             - "teleport-cli"
