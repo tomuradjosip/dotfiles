@@ -26,7 +26,7 @@
     "terminal.integrated.scrollback": 100000,
     "editor.minimap.enabled": false,
     "workbench.editor.empty.hint": "hidden",
-    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorTheme": "Dark Modern",
     "files.autoSave": "afterDelay",
     "editor.fontFamily": "IntoneMono Nerd Font",
     "editor.fontSize": 13,
