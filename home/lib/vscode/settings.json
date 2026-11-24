@@ -30,5 +30,6 @@
     "files.autoSave": "afterDelay",
     "editor.fontFamily": "IntoneMono Nerd Font",
     "editor.fontSize": 13,
-    "terminal.integrated.fontSize": 13
+    "terminal.integrated.fontSize": 13,
+    "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
